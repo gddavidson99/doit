@@ -3,6 +3,8 @@
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
 //addItem
+
+function progressBar(){
 var score = 0;
 var success = 0;
 var attempts = document.getElementById("addItem").id;
