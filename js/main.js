@@ -20,7 +20,7 @@ $(function() {
 
 /*
 var bar = new ProgressBar.SemiCircle(container, {
-=======
+
 //determining success
 function success(){
   return documetn.getElementById('     ').id;
@@ -30,7 +30,6 @@ function progressBar(){
 var score = 0;
 var success = success();
 var attempts = document.getElementById("addItem").id;
->>>>>>> fc2aabcd9306feb3ee8d19523698d57b144ccaf0
 
 
 var bar = new ProgressBar.SemiCircle(container, {
