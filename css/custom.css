@@ -3,9 +3,11 @@ body {
 
 	background: #49a1f9;
 	color: white;
-	font-family: 'Avenir Next'
+	font-family: 'Avenir Next';
 
 }
+
+
 
 /* === SITE HEADER === */
 #site-header {
@@ -37,9 +39,38 @@ body {
 
 }
 
-a.circle:hover {
+.circle:hover {
 
 	text-decoration: none;
 	color: #49a1f9;
+	cursor: pointer;
+
+}
+
+/* === MODAL === */
+#myModal h2 {
+
+	color: #49a1f9;
+
+}
+
+.btn-info {
+
+	background: #49a1f9;
+	border: 1px solid #4395e8;
+
+}
+
+.btn-info:hover {
+
+	background: #4395e8;
+	border: 1px solid #4395e8;
+
+}
+
+.btn-info:focus {
+
+	background: #4395e8;
+	border: 1px solid #4395e8;
 
 }
