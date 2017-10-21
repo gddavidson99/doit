@@ -27,6 +27,11 @@ function success(){
   return document.getElementById('     ').id;
 }
 */
+
+//function success(){
+  //return document.getElementById('     ').id;
+//}
+
 //progress bar
 
 //html for progress bar
@@ -42,7 +47,7 @@ var attempts = 2//document.getElementById("add").id;
 
 
 var bar = new ProgressBar.SemiCircle(container, {
-
+//background
   strokeWidth: 6,
   color: '#FFEA82',
   trailColor: '#eee',
@@ -54,6 +59,7 @@ var bar = new ProgressBar.SemiCircle(container, {
     value: '',
     alignToBottom: false
   },
+	//changing colors
   from: {color: '#ff0505'},
   to: {color: '##ffffff'},
   // Set default step function for all animate calls
@@ -71,7 +77,8 @@ var bar = new ProgressBar.SemiCircle(container, {
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
-percent = succes/attempts;
+//the only new part
+var percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
 }
 */
@@ -80,6 +87,7 @@ $('#addItem').click(function() {
    var Description = $('#description').val();
    var Day = $('#day').val();
    var Time = $('#time').val();
+
   if($("#description").val() == '') {
     $('#alert').html("<strong>Warning!</strong> You left the description empty");
     $('#alert').fadeIn().delay(1000).fadeOut();
@@ -96,23 +104,28 @@ $('#addItem').click(function() {
       return false;
      }
      entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+
+   entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+
    $('#itemsTable').prepend("<tr><input id='check' name='check' type='checkbox'/><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
    $('#form')[0].reset();
    localStorage.setItem('entries', entries);
    return false;
 });
 
-if(localStorage.getItem('entries')) {
-$('#entries').html(localStorage.getItem('entries'));
-}
-});
+// if(localStorage.getItem('entries')) {
+// $('#entries').html(localStorage.getItem('entries'));
+// }
+// });
 function loadin()
 {
-
+var curday = getDate();
+var curmonth = getMonth();
+var hours = getHours();
+var minutes = getMinutes();
 }
 function remove(array, element) {
     const index = array.indexOf(element);
-
     if (index !== -1) {
         array.splice(index, 1);
     }
