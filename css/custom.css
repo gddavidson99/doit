@@ -3,7 +3,7 @@ body {
 
 	background: #49a1f9;
 	color: white;
-	font-family: 'Avenir Next';
+	font-family: 'Avenir Next', 'Avenir', Helvetica, Avenir;
 
 }
 
@@ -80,6 +80,22 @@ section {
 
 }
 
+.btn-success {
+
+	background: none;
+	color: white;
+	border: 2px solid white;
+
+}
+
+.btn-success:hover {
+
+	background: white;
+	color: #49a1f9;
+	border: 2px solid white;
+
+}
+
 /* === ITEMS === */
 #items {
 
@@ -99,9 +115,8 @@ section {
 
 }
 
-#container {
-  margin: 20px;
-  width: 200px;
-  height: 100px;
+.table > tbody > tr > td {
+
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
 
 }

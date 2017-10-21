@@ -3,20 +3,17 @@ var fails = 0;
 var success = 0;
 localStorage.setItem('entries', entries);
 // CHANGE THE SIZE OF THE BUTTON ON HOVER
-$(function() {
-
-	$('#addItem').mouseenter(function() {
-
+$(function()
+{
+	$('#addItem').mouseenter(function()
+	{
 		$('#addItem').animate({height: '50px', width: '50px', lineHeight: '45px'}, "fast");
-
 	});
 
-	$('#addItem').mouseleave(function() {
-
+	$('#addItem').mouseleave(function()
+	{
 		$('#addItem').animate({height: '45px', width: '45px', lineHeight: '40px'}, "fast");
-
 	});
-
 });
 
 // New Item is clicked
@@ -28,7 +25,7 @@ $('#newItem').click(function() {
 	var Time = $('#time').val();
 	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
 	// Add values to table
-    $('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right'>Complete</button>" + "</td><tr>");
 
 	// Reset form
 	$('#form')[0].reset();
