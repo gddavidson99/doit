@@ -74,3 +74,9 @@ body {
 	border: 1px solid #4395e8;
 
 }
+
+#container {
+  margin: 20px;
+  width: 200px;
+  height: 100px;
+}
