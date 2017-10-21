@@ -3,5 +3,19 @@ body {
 
 	background: #49a1f9;
 	color: white;
+	font-family: 'Avenir Next'
+
+}
+
+/* === SITE HEADER === */
+#site-header {
+
+	text-align: center;
+
+}
+
+#site-header h1 {
+
+	font-size: 3.5em;
 
 }
