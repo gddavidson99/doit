@@ -26,7 +26,7 @@ $('#newItem').click(function() {
 	var Time = $('#time').val();
 
 	// Add values to table
-    $('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
 
 	// Reset form
 	$('#form')[0].reset();
