@@ -2,11 +2,14 @@
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
-//addItem
-
+//determining success
+function success(){
+  return documetn.getElementById('     ').id;
+}
+//progress bar
 function progressBar(){
 var score = 0;
-var success = 0;
+var success = success();
 var attempts = document.getElementById("addItem").id;
 
 
