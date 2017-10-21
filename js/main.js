@@ -11,7 +11,7 @@ percent = succes/(success+fails);
 
 <div class="GaugeMeter"
 2
-     data-percent=percent 
+     data-percent=percent
 3
      data-label="Percent"
 4
@@ -77,7 +77,7 @@ GaugeMeter {
 29
   text-decoration: None;
 30
-  font-size: .60em;
+  font-size: .60;
 31
   font-weight: 200;
 32
