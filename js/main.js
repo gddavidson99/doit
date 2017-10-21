@@ -24,6 +24,11 @@ function success(){
   return document.getElementById('     ').id;
 }
 //progress bar
+
+//html for progress bar
+
+//type="text/css">
+//<div id="container"></div>
 function progressBar(){
 
 var bar = new ProgressBar.SemiCircle(container, {
