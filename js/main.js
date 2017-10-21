@@ -79,39 +79,26 @@ $('#add').click( function() {
    var Description = $('#description').val();
    var Day = $('#day').val();
    var Time = $('#time').val();
-  if($("#description").val() == '') {
-    $('#alert').html("<strong>Warning!</strong> You left the description empty");
-    $('#alert').fadeIn().delay(1000).fadeOut();
-    return false;
-   }
-   if($("#day").val() == '') {
-     $('#alert').html("<strong>Warning!</strong> You left the date empty");
-     $('#alert').fadeIn().delay(1000).fadeOut();
-     return false;
-    }
-    if($("#time").val() == '') {
-      $('#alert').html("<strong>Warning!</strong> You left the time empty");
-      $('#alert').fadeIn().delay(1000).fadeOut();
-      return false;
-     }
-     entries[entries.length]={desc:Description, monthday:Day, clock:Time};
-   $('#itemsTable').prepend("<tr><input id='check' name='check' type='checkbox'/><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time"</td><tr>");
+   entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+   $('#itemsTable').prepend("<tr><input id='check' name='check' type='checkbox'/><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
    $('#form')[0].reset();
    localStorage.setItem('entries', entries);
    return false;
 });
 
-if(localStorage.getItem('entries')) {
-$('#entries').html(localStorage.getItem('entries'));
-}
-});
+// if(localStorage.getItem('entries')) {
+// $('#entries').html(localStorage.getItem('entries'));
+// }
+// });
 function loadin()
 {
-
+var curday = getDate();
+var curmonth = getMonth();
+var hours = getHours();
+var minutes = getMinutes();
 }
 function remove(array, element) {
     const index = array.indexOf(element);
-
     if (index !== -1) {
         array.splice(index, 1);
     }
