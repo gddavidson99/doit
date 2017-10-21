@@ -23,8 +23,8 @@ var bar = new ProgressBar.SemiCircle(container, {
     value: '',
     alignToBottom: false
   },
-  from: {color: '#FFEA82'},
-  to: {color: '#ED6A5A'},
+  from: {color: '#ff0505'},
+  to: {color: '##ffffff'},
   // Set default step function for all animate calls
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
