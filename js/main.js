@@ -20,10 +20,20 @@ $(function() {
 
 /*
 var bar = new ProgressBar.SemiCircle(container, {
+=======
+//determining success
+function success(){
+  return documetn.getElementById('     ').id;
+}
+//progress bar
+function progressBar(){
+var score = 0;
+var success = success();
+var attempts = document.getElementById("addItem").id;
+>>>>>>> fc2aabcd9306feb3ee8d19523698d57b144ccaf0
 
-  var score = 0;
-  var success =0;
-  var fails =0;
+
+var bar = new ProgressBar.SemiCircle(container, {
 
   strokeWidth: 6,
   color: '#FFEA82',
@@ -36,16 +46,16 @@ var bar = new ProgressBar.SemiCircle(container, {
     value: '',
     alignToBottom: false
   },
-  from: {color: '#FFEA82'},
-  to: {color: '#ED6A5A'},
+  from: {color: '#ff0505'},
+  to: {color: '##ffffff'},
   // Set default step function for all animate calls
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
-    percent = 100*(succes/(success+fails));
-    if (percent === 0) {
+    score = 100*(succes/attempts);
+    if (score === 0) {
       bar.setText('');
     } else {
-      bar.setText(percent);
+      bar.setText(score);
     }
 
     bar.text.style.color = state.color;
@@ -53,7 +63,7 @@ var bar = new ProgressBar.SemiCircle(container, {
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
-
+percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
 }
 */
