@@ -3,7 +3,14 @@ body {
 
 	background: #49a1f9;
 	color: white;
-	font-family: 'Avenir Next'
+	font-family: 'Avenir Next';
+
+}
+
+section {
+
+	padding-top: 40px;
+	padding-bottom: 40px;
 
 }
 
@@ -37,9 +44,64 @@ body {
 
 }
 
-a.circle:hover {
+.circle:hover {
 
 	text-decoration: none;
 	color: #49a1f9;
+	cursor: pointer;
+
+}
+
+/* === MODAL === */
+#myModal h2 {
+
+	color: #49a1f9;
+
+}
+
+.btn-info {
+
+	background: #49a1f9;
+	border: 1px solid #4395e8;
+
+}
+
+.btn-info:hover {
+
+	background: #4395e8;
+	border: 1px solid #4395e8;
+
+}
+
+.btn-info:focus {
+
+	background: #4395e8;
+	border: 1px solid #4395e8;
+
+}
+
+/* === ITEMS === */
+#items {
+
+	font-size: 1.7em;
+
+}
+
+#items table th {
+
+	font-weight: 600;
+
+}
+
+.table > tbody > tr:first-child > td {
+
+    border: none;
+
+}
+
+#container {
+  margin: 20px;
+  width: 200px;
+  height: 100px;
 
 }

@@ -18,7 +18,7 @@ $(function() {
 
 });
 
-/*
+
 var bar = new ProgressBar.SemiCircle(container, {
 
 //determining success
@@ -98,7 +98,7 @@ $('#entries').html(localStorage.getItem('entries'));
 });
 function loadin()
 {
-  
+
 }
 function remove(array, element) {
     const index = array.indexOf(element);
@@ -107,4 +107,3 @@ function remove(array, element) {
         array.splice(index, 1);
     }
 }
-*/
