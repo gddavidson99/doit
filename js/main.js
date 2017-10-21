@@ -18,7 +18,6 @@ $(function() {
 
 });
 
-
 // var bar = new ProgressBar.SemiCircle(container, {
 
 //determining success
@@ -32,12 +31,19 @@ function success(){
   //return document.getElementById('     ').id;
 //}
 
+
+// var bar = new ProgressBar.SemiCircle(container, {
+
+//determining success
+
+
 //progress bar
 
 //html for progress bar
 
 //type="text/css">
 //<div id="container"></div>
+
 /*
 function progressBar(){
 var score = 0;
@@ -47,6 +53,16 @@ var attempts = document.getElementById("#addItem").id;
 
 var bar = new ProgressBar.SemiCircle(container, {
 //background
+=======
+function progressBar(){
+var score = 0;
+var success = success();
+var attempts = document.getElementById("addItem").id;
+
+
+var bar = new ProgressBar.SemiCircle(container, {
+
+>>>>>>> parent of ef57367... kinda works
   strokeWidth: 6,
   color: '#FFEA82',
   trailColor: '#eee',
@@ -58,7 +74,10 @@ var bar = new ProgressBar.SemiCircle(container, {
     value: '',
     alignToBottom: false
   },
+<<<<<<< HEAD
 	//changing colors
+=======
+>>>>>>> parent of ef57367... kinda works
   from: {color: '#ff0505'},
   to: {color: '##ffffff'},
   // Set default step function for all animate calls
@@ -76,6 +95,7 @@ var bar = new ProgressBar.SemiCircle(container, {
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
+<<<<<<< HEAD
 //the only new part
 var percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
@@ -83,48 +103,27 @@ bar.animate(percent);  // Number from 0.0 to 1.0
 */
 
 $('#addItem').click(function() {
+
    var Description = $('#description').val();
    var Day = $('#day').val();
    var Time = $('#time').val();
 
-  if($("#description").val() == '') {
-    $('#alert').html("<strong>Warning!</strong> You left the description empty");
-    $('#alert').fadeIn().delay(1000).fadeOut();
-    return false;
-   }
-   if($("#date").val() == '') {
-     $('#alert').html("<strong>Warning!</strong> You left the date empty");
-     $('#alert').fadeIn().delay(1000).fadeOut();
-     return false;
-    }
-    if($("#time").val() == '') {
-      $('#alert').html("<strong>Warning!</strong> You left the time empty");
-      $('#alert').fadeIn().delay(1000).fadeOut();
-      return false;
-     }
-     entries[entries.length]={desc:Description, monthday:Day, clock:Time};
-
-   entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+   $('#itemsTable').prepend("<tr><input id='check' name='check' type='checkbox'/><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
 
    $('#itemsTable').prepend("<tr><input id='check' name='check' type='checkbox'/><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+
    $('#form')[0].reset();
    localStorage.setItem('entries', entries);
-   return false;
+
 });
 
-// if(localStorage.getItem('entries')) {
-// $('#entries').html(localStorage.getItem('entries'));
-// }
-// });
 function loadin()
 {
-var curday = getDate();
-var curmonth = getMonth();
-var hours = getHours();
-var minutes = getMinutes();
+
 }
 function remove(array, element) {
     const index = array.indexOf(element);
+
     if (index !== -1) {
         array.splice(index, 1);
     }
