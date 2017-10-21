@@ -6,7 +6,6 @@ var
 var Twitter = new twit(config);
 
 // RETWEET BOT ==========================
-
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
@@ -40,9 +39,9 @@ var retweet = function() {
 }
 
 // grab & retweet as soon as program is running...
-retweet();
+//retweet();
 // retweet in every 50 minutes
-setInterval(retweet, 3000000);
+//setInterval(retweet, 3000000);
 
 // FAVORITE BOT====================
 
@@ -76,9 +75,9 @@ var favoriteTweet = function(){
   });
 }
 // grab & 'favorite' as soon as program is running...
-favoriteTweet();
+//favoriteTweet();
 // 'favorite' a tweet in every 60 minutes
-setInterval(favoriteTweet, 3600000);
+//setInterval(favoriteTweet, 3600000);
 
 // function to generate a random tweet tweet
 function ranDom (arr) {
