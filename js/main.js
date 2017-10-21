@@ -19,8 +19,6 @@ $(function() {
 });
 
 /*
-var bar = new ProgressBar.SemiCircle(container, {
-
 //determining success
 function success(){
   return document.getElementById('     ').id;
@@ -65,4 +63,3 @@ bar.text.style.fontSize = '2rem';
 percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
 }
-*/
