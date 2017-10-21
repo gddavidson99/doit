@@ -1,5 +1,5 @@
 
-	var entries = new Array();
+
 var fails = 0;
 var success = 0;
 // CHANGE THE SIZE OF THE BUTTON ON HOVER
@@ -62,6 +62,7 @@ function loadin()
 	var minutes = new Date().getMinutes();
 
 	//get stored variable
+	if(localStorage.)
 	entries = localStorage.getItem('entries');
 	console.log(entries);
 	//loop through each entry
