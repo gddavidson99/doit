@@ -1,7 +1,7 @@
-var entries = [];
+
+	var entries = new Array();
 var fails = 0;
 var success = 0;
-localStorage.setItem('entries', entries);
 // CHANGE THE SIZE OF THE BUTTON ON HOVER
 $(function()
 {
@@ -24,14 +24,24 @@ $('#newItem').click(function() {
 	var Description = $('#description').val();
 	var Day = $('#date').val();
 	var Time = $('#time').val();
-	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+	var entry = new Object();
+	entry.desc = Description;
+	entry.monthday = Day;
+	entry.clock = Time;
+	console.log(entry);
+	entries.push(entry);
+	for(var i = 0; i<entries.length;i++)
+	{
+		console.log(entries[i]);
+	}
 
+	console.log(entries);
 	// Add values to table
     $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 
 	// Reset form
 	$('#form')[0].reset();
-	localStorage.setItem('entries', entries);
+	localStorage.setItem('itemsTable', itemsTable);
 
 });
 
@@ -42,7 +52,7 @@ function remove(array, element) {
         array.splice(index, 1);
     }
 }
-/*
+
 function loadin()
 {
 	//Get current time
@@ -53,6 +63,7 @@ function loadin()
 
 	//get stored variable
 	entries = localStorage.getItem('entries');
+	console.log(entries);
 	//loop through each entry
 	for(var i= 0; i<entries.length;i++)
 	{
@@ -61,40 +72,44 @@ function loadin()
 		{
 			remove(entries,i);
 			fails++;
+
 		}
 
 		else if (parseInt(entries(i).monthday.slice(0,indexOf("/"))==curmonth)) {
 
 		//if the month is equal the day needs to be checked
-		else if (parseInt(entries(i).monthday.slice(0,indexOf("/"))==curmonth)) {
+
 			//get the day by substringing the entered date after the /. compare to current day and if the entered is lower delete the entry
 
 			if(parseInt(entries(i).monthday.slice(indexOf("/")+1)<curday))
 			{
 				remove(entries,i);
 				fails++;
+
 			}
 
 			else if (parseInt(entries(i).monthday.slice(indexOf("/")+1)==curday)) {
 
 			//if the days are equal time needs to be checked
-			else if (parseInt(entries(i).monthday.slice(indexOf("/")+1)==curday)) {
+
 				//hours is gotten by substringing the time until the :. Then compared to current time and if lower removed. if equal do for minutes
 
 				if(parseInt(entries(i).clock.slice(0,indexOf(":"))<hours))
 				{
 						remove(entries,i);
 						fails++;
+
 				}
 				else if (parseInt(entries(i).clock.slice(0,indexOf(":"))==hours)) {
 
 
-					else if (parseInt(entries(i).clock.slice(indexOf(":")+1)<=minutes)) {
 
-					if (parseInt(entries(i).clock.slice(indexOf(":")+1)<=minutes)) {
+
+					if (parseInt(entries(i).clock.slice(indexOf(":")+1,indexOf(":")+3)<=minutes)) {
 
 							remove(entries,i);
 							fails++;
+
 					}
 				}
 			}
@@ -107,4 +122,3 @@ function loadin()
 		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 	}
 }
-*/
