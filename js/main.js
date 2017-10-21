@@ -27,27 +27,13 @@ $('#newItem').click(function() {
 	// Transer values to variables
 	var Description = $('#description').val();
 
-	//formats date to be MMM abbreviation + day
+	//gets the day from html
 	var Day = $('#date').val();
-	var myDate = Day
-	myDate = myDate.substring(5);
-	var months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-	var month = months[parseInt(myDate.substring(0,2))];
-	myDate = month + " " + myDate.substring(3);
 
-	//formats time to be 12 hour AM/PM
+	//gets the time from HTML
 	var Time = $('#time').val();
-	var myTime = Time;//mytime used to disp time used for calculations
-	var hours = parseInt(Time.substring(0,2))
-	if (hours > 12)
-	{
-		hours -= 12;
-		myTime = hours + Time.substring(2) + " PM";
-	}
-	else {
-	myTime += " AM";
-	}
-	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+
+	//entries[entries.length]={desc:Description, monthday:Day, clock:Time};
 
 	var entry = new Object();
 
@@ -68,7 +54,7 @@ $('#newItem').click(function() {
 	}
 
 	// Add values to table
-    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ myDate + "</td><td>" + myTime + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ toDate(Day) + "</td><td>" + toTime(Time) + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 
 	// Reset form
 	$('#form')[0].reset();
@@ -164,9 +150,35 @@ function loadin()
 	//reprint the table
 	for(var i= 0; i<entries.length;i++)
 	{
-		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + entries[i].desc + "</td><td>" + entries[i].monthday + "</td><td>" + entries[i].clock + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + entries[i].desc + "</td><td>" + toDate(entries[i].monthday) + "</td><td>" + toTime(entries[i].clock) + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 	}
 
+}
+
+
+//function converts YYYY-MM-DD to ABV DD
+function toDate(myDate)
+{
+  myDate = myDate.substring(5);
+  var months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+  var month = months[parseInt(myDate.substring(0,2))];
+  myDate = month + " " + myDate.substring(3);
+  return myDate;
+}
+
+//Converts 24 hr clock to 12 hr with AM/PM
+function toTime(myTime)
+{
+  var hours = parseInt(myTime.substring(0,2))
+  if (hours > 12)
+  {
+    hours -= 12;
+    myTime = hours + myTime.substring(2) + " PM";
+  }
+  else {
+  myTime += " AM";
+  }
+  return myTime;
 }
 
 // //function move() {
