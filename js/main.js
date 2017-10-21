@@ -28,12 +28,8 @@ $('#newItem').click(function() {
 	var Description = $('#description').val();
 	var Day = $('#date').val();
 	var Time = $('#time').val();
-<<<<<<< HEAD
 
 	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
-
-=======
->>>>>>> parent of 7ea19eb... Merge branch 'master' of https://github.com/gddavidson99/doit
 
 	var entry = new Object();
 
@@ -70,7 +66,6 @@ function remove(array, element) {
         array.splice(index, 1);
     }
 }
-<<<<<<< HEAD
 
 function loadin()
 {
@@ -79,8 +74,6 @@ function loadin()
 	var hours = getHours();
 	var minutes = getMinutes();
 	entries = localStorage.getItem('entries');
-=======
->>>>>>> parent of 7ea19eb... Merge branch 'master' of https://github.com/gddavidson99/doit
 
 function loadin()
 {
@@ -162,14 +155,14 @@ function loadin()
 
 		}
 	}
+	*/
 
 	//reprint the table
 	for(var i= 0; i<entries.length;i++)
 	{
-		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + entries[i].desc + "</td><td>"+ entries[i].monthday + "</td><td>" + entries[i].clock + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 	}
 
-	*/
 }
 
 // //function move() {
