@@ -22,6 +22,8 @@ $('#newItem').click(function() {
 
 	// Transer values to variables
 	var Description = $('#description').val();
+
+	//formats date to be MMM abbreviation + day
 	var Day = $('#date').val();
 	var myDate = Day
 	myDate = myDate.substring(5);
