@@ -85,21 +85,20 @@ $('#add').click( function() {
       $('#alert').fadeIn().delay(1000).fadeOut();
       return false;
      }
-     entries[entries.length]=
-   $('#todos').prepend("<li><input id='check' name='check' type='checkbox'/>" + Description + "\t"+ Day + "\t" + Time"</li>");
+     entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+   $('#itemsTable').prepend("<tr><input id='check' name='check' type='checkbox'/><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time"</td><tr>");
    $('#form')[0].reset();
-   var todos = $('#todos').html();
-   localStorage.setItem('todos', todos);
+   localStorage.setItem('entries', entries);
    return false;
 });
 
-if(localStorage.getItem('todos')) {
-$('#todos').html(localStorage.getItem('todos'));
+if(localStorage.getItem('entries')) {
+$('#entries').html(localStorage.getItem('entries'));
 }
 });
-function failed(todos)
+function loadin()
 {
-
+  
 }
 function remove(array, element) {
     const index = array.indexOf(element);
