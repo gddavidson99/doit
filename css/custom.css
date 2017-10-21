@@ -94,5 +94,14 @@ section {
 }
 
 .table > tbody > tr:first-child > th {
+
     border: none;
+	
+}
+
+#container {
+  margin: 20px;
+  width: 200px;
+  height: 100px;
+
 }
