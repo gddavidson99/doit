@@ -73,28 +73,18 @@ section {
 
 }
 
-.btn-info:focus,
-.btn-info:target {
+.btn-info:focus {
 
 	background: #4395e8;
 	border: 1px solid #4395e8;
 
 }
 
-.btn-success,
-.btn-success:active,
-.btn-success:focus,
-.btn-success:default,
-.btn-success:enabled,
-.btn-success:target,
-.btn-success:checked,
-.btn-success:disabled,
-.btn-success:enabled {
+.btn-success {
 
 	background: none;
 	color: white;
 	border: 2px solid white;
-	margin-left: 10px;
 
 }
 
@@ -103,12 +93,6 @@ section {
 	background: white;
 	color: #49a1f9;
 	border: 2px solid white;
-
-}
-
-.btn-group {
-
-	margin-top: 10px;
 
 }
 
@@ -136,17 +120,3 @@ section {
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
 
 }
-#container {
-  margin: 20px;
-  width: 200px;
-  height: 200px;
-  position: relative;
-}
-/*#myBar {
-    width: 10%;
-    height: 30px;
-    background-color: #4CAF50;
-    text-align: center; /* To center it horizontally (if you want)
-    line-height: 30px;  To center it vertically
-    color: white;
-}*/
