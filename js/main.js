@@ -4,7 +4,7 @@
 
 //determining success
 function success(){
-  return documetn.getElementById('     ').id;
+  return document.getElementById('     ').id;
 }
 //progress bar
 function progressBar(){
