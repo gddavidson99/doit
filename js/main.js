@@ -28,9 +28,9 @@ $('#newItem').click(function() {
 	var Description = $('#description').val();
 	var Day = $('#date').val();
 	var Time = $('#time').val();
-<<<<<<< HEAD
+
 	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
-=======
+
 
 	var entry = new Object();
 
@@ -50,7 +50,6 @@ $('#newItem').click(function() {
 		console.log(items1[i]);
 	}
 
->>>>>>> 9ea687c4ff0e425125315994e0d9ca18c6fcf1a0
 	// Add values to table
     $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right'>Complete</button>" + "</td><tr>");
 
@@ -68,7 +67,7 @@ function remove(array, element) {
         array.splice(index, 1);
     }
 }
-<<<<<<< HEAD
+
 function loadin()
 {
 	var curday = getDate();
@@ -76,7 +75,6 @@ function loadin()
 	var hours = getHours();
 	var minutes = getMinutes();
 	entries = localStorage.getItem('entries');
-=======
 
 function loadin()
 {
