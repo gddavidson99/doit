@@ -1,20 +1,17 @@
 var entries = [];
 
 // CHANGE THE SIZE OF THE BUTTON ON HOVER
-$(function() {
-
-	$('#addItem').mouseenter(function() {
-
+$(function()
+{
+	$('#addItem').mouseenter(function()
+	{
 		$('#addItem').animate({height: '50px', width: '50px', lineHeight: '45px'}, "fast");
-
 	});
 
-	$('#addItem').mouseleave(function() {
-
+	$('#addItem').mouseleave(function()
+	{
 		$('#addItem').animate({height: '45px', width: '45px', lineHeight: '40px'}, "fast");
-
 	});
-
 });
 
 // New Item is clicked
