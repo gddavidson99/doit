@@ -29,8 +29,6 @@ $('#newItem').click(function() {
 	var Day = $('#date').val();
 	var Time = $('#time').val();
 
-	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
-
 	var entry = new Object();
 
 	entry.desc = Description;
@@ -69,14 +67,6 @@ function remove(array, element) {
 
 function loadin()
 {
-	var curday = getDate();
-	var curmonth = getMonth();
-	var hours = getHours();
-	var minutes = getMinutes();
-	entries = localStorage.getItem('entries');
-
-function loadin()
-{
 
 	var entries = new Array();
 
@@ -90,12 +80,6 @@ function loadin()
 
 	entries = JSON.parse(localStorage.getItem('entries'));
 	localStorage.setItem('entries', JSON.stringify(entries));
-
-	for (var i = 0; i < entries.length; i++) {
-
-		console.log(entries[i]);
-
-	}
 
 	/*
 
@@ -160,7 +144,7 @@ function loadin()
 	//reprint the table
 	for(var i= 0; i<entries.length;i++)
 	{
-		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + entries[i].desc + "</td><td>"+ entries[i].monthday + "</td><td>" + entries[i].clock + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + entries[i].desc + "</td><td>" + entries[i].monthday + "</td><td>" + entries[i].clock + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 	}
 
 }
