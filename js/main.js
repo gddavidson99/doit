@@ -22,9 +22,11 @@ $(function() {
 var bar = new ProgressBar.SemiCircle(container, {
 
 //determining success
-function success(){
-  return document.getElementById('     ').id;
-}
+
+//function success(){
+  //return document.getElementById('     ').id;
+//}
+
 //progress bar
 
 //html for progress bar
@@ -38,7 +40,7 @@ var attempts = 2//document.getElementById("add").id;
 
 
 var bar = new ProgressBar.SemiCircle(container, {
-
+//background
   strokeWidth: 6,
   color: '#FFEA82',
   trailColor: '#eee',
@@ -50,6 +52,7 @@ var bar = new ProgressBar.SemiCircle(container, {
     value: '',
     alignToBottom: false
   },
+	//changing colors
   from: {color: '#ff0505'},
   to: {color: '##ffffff'},
   // Set default step function for all animate calls
@@ -67,7 +70,8 @@ var bar = new ProgressBar.SemiCircle(container, {
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
-percent = succes/attempts;
+//the only new part
+var percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
 }
 
