@@ -48,11 +48,11 @@ var bar = new ProgressBar.SemiCircle(container, {
   // Set default step function for all animate calls
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
-    score = 100*(succes/attempts);
-    if (score === 0) {
+		var value = Math.round(bar.value() * 100);
+    if (value === 0) {
       bar.setText('');
     } else {
-      bar.setText(score);
+      bar.setText(value);
     }
 
     bar.text.style.color = state.color;
