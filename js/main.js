@@ -82,3 +82,46 @@ function loadin()
 	$('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
 }
 }
+// //function move() {
+//     var elem = document.getElementById("myBar");
+//     var width = 10;
+//     var id = setInterval(frame, 10);
+//     function frame() {
+//         if (width >= 100) {
+//             clearInterval(id);
+//         } else {
+//             width++;
+//             elem.style.width = width + '%';
+//             elem.innerHTML = width * 1 + '%';
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+// progressbar.js@1.0.0 version is used
+// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+//Progress Bar function
+!function ($) {
+
+
+    // PROGRESSBAR CLASS DEFINITION
+    // ============================
+
+    var Progressbar = function (element) {
+        this.$element = $(element);
+    }
+
+    Progressbar.prototype.update = function (value) {
+        var $div = this.$element.find('div');
+        var $span = $div.find('span');
+				var value = success/(success+fails);
+        $div.attr('aria-valuenow', value);
+        $div.css('width', value + '%');
+        $span.text(value + '% Complete');
+
+}(window.jQuery);
