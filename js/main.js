@@ -19,11 +19,9 @@ $(function() {
 });
 
 /*
-var bar = new ProgressBar.SemiCircle(container, {
-
 //determining success
 function success(){
-  return documetn.getElementById('     ').id;
+  return document.getElementById('     ').id;
 }
 //progress bar
 function progressBar(){
@@ -50,11 +48,11 @@ var bar = new ProgressBar.SemiCircle(container, {
   // Set default step function for all animate calls
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
-    score = 100*(succes/attempts);
-    if (score === 0) {
+		var value = Math.round(bar.value() * 100);
+    if (value === 0) {
       bar.setText('');
     } else {
-      bar.setText(score);
+      bar.setText(value);
     }
 
     bar.text.style.color = state.color;
@@ -65,4 +63,3 @@ bar.text.style.fontSize = '2rem';
 percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
 }
-*/
