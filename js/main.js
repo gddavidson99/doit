@@ -1,7 +1,7 @@
 //moves progress bar
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
-
+var entries = [];
 $(function() {
 
 	$('#addItem').mouseenter(function() {
@@ -64,5 +64,48 @@ bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
 percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
+}
+
+$('#add').click( function() {
+   var Description = $('#description').val();
+   var Day = $('#day').val();
+   var Time = $('#time').val();
+  if($("#description").val() == '') {
+    $('#alert').html("<strong>Warning!</strong> You left the description empty");
+    $('#alert').fadeIn().delay(1000).fadeOut();
+    return false;
+   }
+   if($("#day").val() == '') {
+     $('#alert').html("<strong>Warning!</strong> You left the date empty");
+     $('#alert').fadeIn().delay(1000).fadeOut();
+     return false;
+    }
+    if($("#time").val() == '') {
+      $('#alert').html("<strong>Warning!</strong> You left the time empty");
+      $('#alert').fadeIn().delay(1000).fadeOut();
+      return false;
+     }
+     entries[entries.length]=
+   $('#todos').prepend("<li><input id='check' name='check' type='checkbox'/>" + Description + "\t"+ Day + "\t" + Time"</li>");
+   $('#form')[0].reset();
+   var todos = $('#todos').html();
+   localStorage.setItem('todos', todos);
+   return false;
+});
+
+if(localStorage.getItem('todos')) {
+$('#todos').html(localStorage.getItem('todos'));
+}
+});
+function failed(todos)
+{
+
+}
+function remove(array, element) {
+    const index = array.indexOf(element);
+
+    if (index !== -1) {
+        array.splice(index, 1);
+    }
 }
 */
