@@ -19,3 +19,26 @@ body {
 	font-size: 3.5em;
 
 }
+
+/* === CIRCLES === */
+.circle {
+
+	height: 45px;
+	width: 45px;
+	text-align: center;
+	display: inline-block;
+	line-height: 40px;
+	padding: 3px 7px;
+	border-radius: 50%;
+	background: white;
+	color: #49a1f9;
+	text-decoration: none;
+
+}
+
+a.circle:hover {
+
+	text-decoration: none;
+	color: #49a1f9;
+
+}
