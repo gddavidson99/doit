@@ -37,7 +37,6 @@ $('#newItem').click(function() {
 
 	//formats time to be 12 hour AM/PM
 	var Time = $('#time').val();
-<<<<<<< HEAD
 	var myTime = Time;//mytime used to disp time used for calculations
 	var hours = parseInt(Time.substring(0,2))
 	if (hours > 12)
@@ -49,7 +48,6 @@ $('#newItem').click(function() {
 	myTime += " AM";
 	}
 	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
-=======
 
 	var entry = new Object();
 
@@ -68,7 +66,6 @@ $('#newItem').click(function() {
 	{
 		console.log(items1[i]);
 	}
->>>>>>> 026ad60250a0f73536c1945cc270380316f76cb2
 
 	// Add values to table
     $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ myDate + "</td><td>" + myTime + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
