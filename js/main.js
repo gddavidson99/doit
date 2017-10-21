@@ -1,12 +1,8 @@
 var fails = 0;
 var success = 0;
 
-
-var fails = 0;
-var success = 0;
 // CHANGE THE SIZE OF THE BUTTON ON HOVER
-$(function()
-{
+$(function() {
 
 	loadin();
 
@@ -19,6 +15,7 @@ $(function()
 	{
 		$('#addItem').animate({height: '45px', width: '45px', lineHeight: '40px'}, "fast");
 	});
+
 });
 
 // New Item is clicked
@@ -44,14 +41,12 @@ $('#newItem').click(function() {
 	entry.desc = Description;
 	entry.monthday = Day;
 	entry.clock = Time;
-	console.log(entry);
-	entries.push(entry);
-	for(var i = 0; i<entries.length;i++)
+
+	for(var i = 0; i<items1.length;i++)
 	{
-		console.log(entries[i]);
+		console.log(items1[i]);
 	}
 
-	console.log(entries);
 	// Add values to table
     $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 
@@ -180,7 +175,7 @@ function loadin()
 
 
 
-
+/*
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 //Progress Bar function
@@ -203,3 +198,4 @@ function loadin()
         $span.text(value + '% Complete');
 
 }(window.jQuery);
+*/
