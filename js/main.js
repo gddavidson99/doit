@@ -81,8 +81,14 @@ $('#add').click( function() {
    var Description = $('#description').val();
    var Day = $('#day').val();
    var Time = $('#time').val();
+<<<<<<< HEAD
    entries[entries.length]={desc:Description, monthday:Day, clock:Time};
    $('#itemsTable').prepend("<tr><input id='check' name='check' type='checkbox'/><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+=======
+
+   $('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+
+>>>>>>> 475ca681187bf3b25d8b3a66fc96cba71e48817d
    $('#form')[0].reset();
    localStorage.setItem('entries', entries);
    return false;
