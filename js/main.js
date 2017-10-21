@@ -1,4 +1,6 @@
 var entries = [];
+
+// CHANGE THE SIZE OF THE BUTTON ON HOVER
 $(function() {
 
 	$('#addItem').mouseenter(function() {
@@ -15,16 +17,20 @@ $(function() {
 
 });
 
+// New Item is clicked
 $('#newItem').click(function() {
 
-   var Description = $('#description').val();
-   var Day = $('#date').val();
-   var Time = $('#time').val();
+	// Transer values to variables
+	var Description = $('#description').val();
+	var Day = $('#date').val();
+	var Time = $('#time').val();
 
-   $('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+	// Add values to table
+    $('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
 
-   $('#form')[0].reset();
-   localStorage.setItem('entries', entries);
+	// Reset form
+	$('#form')[0].reset();
+	localStorage.setItem('entries', entries);
 
 });
 
