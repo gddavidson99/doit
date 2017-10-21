@@ -28,6 +28,9 @@ $('#newItem').click(function() {
 	var Description = $('#description').val();
 	var Day = $('#date').val();
 	var Time = $('#time').val();
+<<<<<<< HEAD
+	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+=======
 
 	var entry = new Object();
 
@@ -47,8 +50,9 @@ $('#newItem').click(function() {
 		console.log(items1[i]);
 	}
 
+>>>>>>> 9ea687c4ff0e425125315994e0d9ca18c6fcf1a0
 	// Add values to table
-    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right'>Complete</button>" + "</td><tr>");
 
 	// Reset form
 	$('#form')[0].reset();
@@ -64,6 +68,15 @@ function remove(array, element) {
         array.splice(index, 1);
     }
 }
+<<<<<<< HEAD
+function loadin()
+{
+	var curday = getDate();
+	var curmonth = getMonth();
+	var hours = getHours();
+	var minutes = getMinutes();
+	entries = localStorage.getItem('entries');
+=======
 
 function loadin()
 {
@@ -88,13 +101,23 @@ function loadin()
 	console.log(entries);
 
 	//loop through each entry
+>>>>>>> 9ea687c4ff0e425125315994e0d9ca18c6fcf1a0
 	for(var i= 0; i<entries.length;i++)
 	{
-		//get the string of the entered month until the slash and compare that to the current month. If it is lower the entry is removed
 		if(parseInt(entries(i).monthday.slice(0,indexOf("/"))<curmonth))
 		{
 			remove(entries,i);
 			fails++;
+<<<<<<< HEAD
+		}
+		else if (parseInt(entries(i).monthday.slice(0,indexOf("/"))==curmonth) {
+			if(parseInt(entries(i).monthday.slice(indexOf("/")+1)<curday)
+			{
+				remove(entries,i);
+				fails++;
+			}
+			else if (parseInt(entries(i).monthday.slice(indexOf("/")+1)==curday) {
+=======
 
 		}
 
@@ -113,12 +136,18 @@ function loadin()
 
 				//hours is gotten by substringing the time until the :. Then compared to current time and if lower removed. if equal do for minutes
 
+>>>>>>> 9ea687c4ff0e425125315994e0d9ca18c6fcf1a0
 				if(parseInt(entries(i).clock.slice(0,indexOf(":"))<hours))
 				{
 						remove(entries,i);
 						fails++;
 
 				}
+<<<<<<< HEAD
+				else if (parseInt(entries(i).clock.slice(0,indexOf(":"))==hours) {
+
+					else if (parseInt(entries(i).clock.slice(indexOf(":")+1)<=minutes) {
+=======
 				else if (parseInt(entries(i).clock.slice(0,indexOf(":"))==hours)) {
 
 
@@ -130,6 +159,7 @@ function loadin()
 					if (parseInt(entries(i).clock.slice(indexOf(":")+1,indexOf(":")+3)<=minutes)) {
 
 
+>>>>>>> 9ea687c4ff0e425125315994e0d9ca18c6fcf1a0
 							remove(entries,i);
 							fails++;
 
@@ -139,6 +169,13 @@ function loadin()
 
 		}
 	}
+<<<<<<< HEAD
+	for(var i= 0; i<entries.length;i++)
+	{
+	$('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+}
+}
+=======
 
 	*/
 
@@ -170,13 +207,20 @@ function loadin()
 
 
 
+>>>>>>> 9ea687c4ff0e425125315994e0d9ca18c6fcf1a0
 
 /*
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 //Progress Bar function
-!function ($) {
 
+<<<<<<< HEAD
+$('.progress .bar').progressbar();           // bootstrap 2
+$('.progress .progress-bar').progressbar();
+$(document).ready(function() {
+$('.progress .progress-bar').progressbar({display_text: 'center', use_percentage: true, amount_format: function(p, t) {return success + ' of ' + (success+fails);}});
+});
+=======
 
     // PROGRESSBAR CLASS DEFINITION
     // ============================
@@ -195,3 +239,4 @@ function loadin()
 
 }(window.jQuery);
 */
+>>>>>>> 9ea687c4ff0e425125315994e0d9ca18c6fcf1a0
