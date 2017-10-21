@@ -33,6 +33,8 @@ var bar = new ProgressBar.SemiCircle(container, {
 
 //type="text/css">
 //<div id="container"></div>
+
+
 function progressBar(){
 var score = 0;
 var success = 1//success();
