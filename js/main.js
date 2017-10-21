@@ -23,11 +23,27 @@ $('#newItem').click(function() {
 	// Transer values to variables
 	var Description = $('#description').val();
 	var Day = $('#date').val();
+	var myDate = Day
+	myDate = myDate.substring(5);
+	var months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+	var month = months[parseInt(myDate.substring(0,2))];
+	myDate = month + " " + myDate.substring(3);
+
+	//formats time to be 12 hour AM/PM
 	var Time = $('#time').val();
+	var hours = parseInt(Time.substring(0,2))
+	if (hours > 12)
+	{
+		hours -= 12;
+		Time = hours + Time.substring(2) + " PM";
+	}
+	else {
+	Time += " AM";
+	}
 	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
 
 	// Add values to table
-    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ myDate + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 
 	// Reset form
 	$('#form')[0].reset();
