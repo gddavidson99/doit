@@ -42,8 +42,7 @@ function success(){
 function progressBar(){
 var score = 0;
 var success = success();
-var success = 1//success();
-var attempts = 2//document.getElementById("add").id;
+var attempts = document.getElementById("#addItem").id;
 
 
 var bar = new ProgressBar.SemiCircle(container, {
