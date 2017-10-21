@@ -24,6 +24,7 @@ $('#newItem').click(function() {
 	var Day = $('#date').val();
 	var Time = $('#time').val();
 	entries[entries.length]={desc:Description, monthday:Day, clock:Time};
+
 	// Add values to table
     $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 
@@ -40,6 +41,7 @@ function remove(array, element) {
         array.splice(index, 1);
     }
 }
+/*
 function loadin()
 {
 	var curday = getDate();
@@ -54,21 +56,21 @@ function loadin()
 			remove(entries,i);
 			fails++;
 		}
-		else if (parseInt(entries(i).monthday.slice(0,indexOf("/"))==curmonth) {
-			if(parseInt(entries(i).monthday.slice(indexOf("/")+1)<curday)
+		else if (parseInt(entries(i).monthday.slice(0,indexOf("/"))==curmonth)) {
+			if(parseInt(entries(i).monthday.slice(indexOf("/")+1)<curday))
 			{
 				remove(entries,i);
 				fails++;
 			}
-			else if (parseInt(entries(i).monthday.slice(indexOf("/")+1)==curday) {
+			else if (parseInt(entries(i).monthday.slice(indexOf("/")+1)==curday)) {
 				if(parseInt(entries(i).clock.slice(0,indexOf(":"))<hours))
 				{
 						remove(entries,i);
 						fails++;
 				}
-				else if (parseInt(entries(i).clock.slice(0,indexOf(":"))==hours) {
+				else if (parseInt(entries(i).clock.slice(0,indexOf(":"))==hours)) {
 
-					else if (parseInt(entries(i).clock.slice(indexOf(":")+1)<=minutes) {
+					else if (parseInt(entries(i).clock.slice(indexOf(":")+1)<=minutes)) {
 							remove(entries,i);
 							fails++;
 					}
@@ -79,6 +81,7 @@ function loadin()
 	}
 	for(var i= 0; i<entries.length;i++)
 	{
-	$('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+	}
 }
-}
+*/
