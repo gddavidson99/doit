@@ -2,11 +2,13 @@
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
-var bar = new ProgressBar.SemiCircle(container, {
+//addItem
+var score = 0;
+var success = 0;
+var attempts = document.getElementById("addItem").id;
 
-  var score = 0;
-  var success =0;
-  var fails =0;
+
+var bar = new ProgressBar.SemiCircle(container, {
 
   strokeWidth: 6,
   color: '#FFEA82',
@@ -24,11 +26,11 @@ var bar = new ProgressBar.SemiCircle(container, {
   // Set default step function for all animate calls
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
-    percent = 100*(succes/(success+fails));
-    if (percent === 0) {
+    score = 100*(succes/attempts);
+    if (score === 0) {
       bar.setText('');
     } else {
-      bar.setText(percent);
+      bar.setText(score);
     }
 
     bar.text.style.color = state.color;
@@ -36,6 +38,6 @@ var bar = new ProgressBar.SemiCircle(container, {
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
-
+percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
 }
