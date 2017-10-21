@@ -108,7 +108,7 @@ $('#newItem').click(function() {
    var Day = $('#date').val();
    var Time = $('#time').val();
 
-   $('#itemsTable').prepend("<tr><input id='check' name='check' type='checkbox'/><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
+   $('#itemsTable tbody').prepend("<tr><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><tr>");
 
    $('#form')[0].reset();
    localStorage.setItem('entries', entries);
