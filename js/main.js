@@ -18,7 +18,7 @@ $(function() {
 
 });
 
-/*
+
 //determining success
 function success(){
   return document.getElementById('     ').id;
@@ -26,8 +26,8 @@ function success(){
 //progress bar
 function progressBar(){
 var score = 0;
-var success = success();
-var attempts = document.getElementById("addItem").id;
+var success = 1;
+var attempts =2 //document.getElementById("addItem").id;
 
 
 var bar = new ProgressBar.SemiCircle(container, {
@@ -58,7 +58,7 @@ var bar = new ProgressBar.SemiCircle(container, {
     bar.text.style.color = state.color;
   }
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontFamily = '"Raleway", Avenir, sans-serif';
 bar.text.style.fontSize = '2rem';
 percent = succes/attempts;
 bar.animate(percent);  // Number from 0.0 to 1.0
