@@ -2,6 +2,23 @@
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
+$(function() {
+
+	$('#addItem').mouseenter(function() {
+
+		$('#addItem').animate({height: '50px', width: '50px', lineHeight: '45px'}, "fast");
+
+	});
+
+	$('#addItem').mouseleave(function() {
+
+		$('#addItem').animate({height: '45px', width: '45px', lineHeight: '40px'}, "fast");
+
+	});
+
+});
+
+/*
 var bar = new ProgressBar.SemiCircle(container, {
 
   var score = 0;
@@ -39,3 +56,4 @@ bar.text.style.fontSize = '2rem';
 
 bar.animate(percent);  // Number from 0.0 to 1.0
 }
+*/

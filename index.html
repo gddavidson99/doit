@@ -21,7 +21,7 @@
 					<div class="col-sm-12">
 
 						<h1>doit.</h1>
-						<a href="#" class="circle" id="addItem"><i class="fa fa-plus"></i></a>
+						<button type="button" class="circle" id="addItem" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i></button>
 
 					</div>
 
@@ -30,10 +30,30 @@
 
 		</header>
 
+		<section class="modal fade" id="addModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        				<h5 class="modal-title">Modal title</h5>
+        				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         					<span aria-hidden="true">&times;</span>
+        				</button>
+      				</div>
+     				<div class="modal-body">
+        				<p>Modal body text goes here.</p>
+      				</div>
+      				<div class="modal-footer">
+        				<button type="button" class="btn btn-primary">Save changes</button>
+        				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      				</div>
+    			</div>
+  			</div>
+		</section>
+
 		<!-- === BOOTSTRAP SCRIPTS === -->
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 
 	</body>
 </html>
