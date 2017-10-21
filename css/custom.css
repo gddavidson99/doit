@@ -73,18 +73,28 @@ section {
 
 }
 
-.btn-info:focus {
+.btn-info:focus,
+.btn-info:target {
 
 	background: #4395e8;
 	border: 1px solid #4395e8;
 
 }
 
-.btn-success {
+.btn-success,
+.btn-success:active,
+.btn-success:focus,
+.btn-success:default,
+.btn-success:enabled,
+.btn-success:target,
+.btn-success:checked,
+.btn-success:disabled,
+.btn-success:enabled {
 
 	background: none;
 	color: white;
 	border: 2px solid white;
+	margin-left: 10px;
 
 }
 
@@ -93,6 +103,12 @@ section {
 	background: white;
 	color: #49a1f9;
 	border: 2px solid white;
+
+}
+
+.btn-group {
+
+	margin-top: 10px;
 
 }
 
