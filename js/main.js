@@ -94,6 +94,12 @@ function loadin()
 	entries = JSON.parse(localStorage.getItem('entries'));
 	localStorage.setItem('entries', JSON.stringify(entries));
 
+	for (var i = 0; i < entries.length; i++) {
+
+		console.log(entries[i]);
+
+	}
+
 	/*
 
 	if(localStorage.)
@@ -177,15 +183,13 @@ function loadin()
 }
 =======
 
-	*/
-
 	//reprint the table
-	for(var i = 0; i < entries.length; i++)
+	for(var i= 0; i<entries.length;i++)
 	{
-		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + entries[i].desc + "</td><td>"+ entries[i].monthday + "</td><td>" + entries[i].clock + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 	}
 
-
+	*/
 }
 
 // //function move() {
