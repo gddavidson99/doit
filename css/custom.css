@@ -93,10 +93,10 @@ section {
 
 }
 
-.table > tbody > tr:first-child > th {
+.table > tbody > tr:first-child > td {
 
     border: none;
-	
+
 }
 
 #container {
