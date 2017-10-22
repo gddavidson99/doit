@@ -13,7 +13,6 @@
 		<link rel="stylesheet" href="css/animate.css">
 
 	</head>
-	</head>
 	<body>
 
 		<!-- MODAL
@@ -48,6 +47,15 @@
 							<div class="form-group">
 
 								<input type="text" placeholder="Time" class="input-lg form-control" id="time">
+
+								<div class="btn-group" data-toggle="buttons">
+								  <label class="btn btn-info">
+								    <input type="radio" autocomplete="off">AM
+								  </label>
+								  <label class="btn btn-info">
+								    <input type="radio" autocomplete="off">PM
+								  </label>
+								</div>
 
 							</div>
 
@@ -103,9 +111,23 @@
 			</div>
 		</section>
 
-</head>
-<body>
-	
+		<link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+<script type="text/javascript" src="loading-bar.js"></script>
+	<div
+	data-preset="fan"
+	  class="ldBar label-center"
+	  style="width:25%;height:25%;margin:auto"
+
+	></div>
+	<style type="text/css">
+  .ldBar-label {
+		text-align: center;
+    color: white;
+    font-family: Avenir;
+    font-size: 2.1em;
+    font-weight: 500;
+  }
+</style>
 
 		<!-- === BOOTSTRAP SCRIPTS === -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
