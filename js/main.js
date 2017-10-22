@@ -4,7 +4,7 @@ var success = 2;
 // CHANGE THE SIZE OF THE BUTTON ON HOVER
 $(function() {
 
-	loadin();
+    loadin();
 
 	$('#addItem').mouseenter(function()
 	{
@@ -26,8 +26,14 @@ $('#newItem').click(function() {
 
 	// Transer values to variables
 	var Description = $('#description').val();
+
+	//gets the day from html
 	var Day = $('#date').val();
+
+	//gets the time from HTML
 	var Time = $('#time').val();
+
+	//entries[entries.length]={desc:Description, monthday:Day, clock:Time};
 
 	var entry = new Object();
 
@@ -48,7 +54,7 @@ $('#newItem').click(function() {
 	}
 
 	// Add values to table
-    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ Day + "</td><td>" + Time + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+    $('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + Description + "</td><td>"+ toDate(Day) + "</td><td>" + toTime(Time) + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 
 	// Reset form
 	$('#form')[0].reset();
@@ -72,7 +78,7 @@ function loadin()
 
 	//Get current time
 	var curday = new Date().getDate();
-	var curmonth = new Date().getMonth();
+	var curmonth = new Date().getMonth()+1;
 	var hours = new Date().getHours();
 	var minutes = new Date().getMinutes();
 
@@ -81,72 +87,108 @@ function loadin()
 	entries = JSON.parse(localStorage.getItem('entries'));
 	localStorage.setItem('entries', JSON.stringify(entries));
 
-	/*
 
-	if(localStorage.)
-	entries = localStorage.getItem('entries');
-	console.log(entries);
+// console.log(entries);
 
 	//loop through each entry
 	for(var i= 0; i<entries.length;i++)
 	{
 		//get the string of the entered month until the slash and compare that to the current month. If it is lower the entry is removed
-		if(parseInt(entries(i).monthday.slice(0,indexOf("/"))<curmonth))
+    // console.log(parseInt(entries[i].monthday.slice(5,7)));
+    // console.log(entries[i].monthday);
+    // console.log(curmonth);
+		if(parseInt(entries[i].monthday.slice(5,7))<curmonth.valueOf())
 		{
-			remove(entries,i);
+
+			remove(entries,entries[i]);
 			fails++;
 
 		}
 
+  else  if(parseInt(entries[i].monthday.slice(5,7))==curmonth.valueOf())
+    {
+
 		//if the month is equal the day needs to be checked
 
 			//get the day by substringing the entered date after the /. compare to current day and if the entered is lower delete the entry
-
-			if(parseInt(entries(i).monthday.slice(indexOf("/")+1)<curday))
+      // console.log(parseInt(entries[i].monthday.slice(8)));
+      // console.log(curday);
+			if(parseInt(entries[i].monthday.slice(8))<curday.valueOf())
 			{
-				remove(entries,i);
+				remove(entries,entries[i]);
 				fails++;
 
 			}
 
+      else if(parseInt(entries[i].monthday.slice(8))==curday.valueOf())
+      {
+        // console.log(entries[i].clock.slice(0,2));
+        // console.log(hours);
+        if(parseInt(entries[i].clock.slice(0,2))<hours.valueOf())
+				{
+						remove(entries,entries[i]);
+						fails++;
+
+				}
+
+        else if(parseInt(entries[i].clock.slice(0,2))==hours.valueOf())
+        {
+          // console.log(entries[i].clock.slice(3));
+          // console.log(minutes);
+          if (parseInt(entries[i].clock.slice(3))<=minutes.valueOf()) {
+
+
+							remove(entries,entries[i]);
+							fails++;
+
+					}
+        }
+      }
 			//if the days are equal time needs to be checked
 
 				//hours is gotten by substringing the time until the :. Then compared to current time and if lower removed. if equal do for minutes
 
-				if(parseInt(entries(i).clock.slice(0,indexOf(":"))<hours))
-				{
-						remove(entries,i);
-						fails++;
 
-				}
-				else if (parseInt(entries(i).clock.slice(0,indexOf(":"))==hours)) {
-
-
-					if (parseInt(entries(i).clock.slice(indexOf(":")+1)<=minutes)) {
-
-
-
-
-					if (parseInt(entries(i).clock.slice(indexOf(":")+1,indexOf(":")+3)<=minutes)) {
-
-
-							remove(entries,i);
-							fails++;
 
 					}
 				}
-			}
 
-		}
-	}
-	*/
+localStorage.setItem('entries', JSON.stringify(entries));
+
+
 
 	//reprint the table
 	for(var i= 0; i<entries.length;i++)
 	{
-		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + entries[i].desc + "</td><td>" + entries[i].monthday + "</td><td>" + entries[i].clock + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
+		$('#itemsTable tbody').prepend("<tr class='animated fadeInLeft'><td>" + entries[i].desc + "</td><td>" + toDate(entries[i].monthday) + "</td><td>" + toTime(entries[i].clock) + "</td><td>" + "<button type='button' class='btn btn-success pull-right' id='clear'>Clear</button><button type='button' class='btn btn-success pull-right' id='complete'>Complete</button>" + "</td><tr>");
 	}
 
+}
+
+
+//function converts YYYY-MM-DD to ABV DD
+function toDate(myDate)
+{
+  myDate = myDate.substring(5);
+  var months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+  var month = months[parseInt(myDate.substring(0,2))];
+  myDate = month + " " + myDate.substring(3);
+  return myDate;
+}
+
+//Converts 24 hr clock to 12 hr with AM/PM
+function toTime(myTime)
+{
+  var hours = parseInt(myTime.substring(0,2))
+  if (hours > 12)
+  {
+    hours -= 12;
+    myTime = hours + myTime.substring(2) + " PM";
+  }
+  else {
+  myTime += " AM";
+  }
+  return myTime;
 }
 
 // //function move() {
